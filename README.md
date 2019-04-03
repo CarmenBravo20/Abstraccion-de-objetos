@@ -1,12 +1,20 @@
 # Abstraccion-de-objetos
  	PRÁCTICA DE LABORATORIO 
 
-CARRERA: COMPUTACIÓN	ASIGNATURA: PROGRAMACIÓN APLICADA
-NRO. PRÁCTICA:	1	TÍTULO PRÁCTICA: ABSTRACCIÓN DE OBJETOS A CLASES(POO)
+CARRERA: COMPUTACIÓN
+
+ASIGNATURA: PROGRAMACIÓN APLICADA
+
+NRO. PRÁCTICA:	1	
+
+TÍTULO PRÁCTICA: ABSTRACCIÓN DE OBJETOS A CLASES(POO)
+
 OBJETIVO ALCANZADO:
 Modelar aplicaciones de software mediante diagramas de clases.
+
 ACTIVIDADES DESARROLLADAS
 1. 1. Describir 10 objetos relacionados a tema de Restaurantes.
+
 Factura: Una factura es un documento de índole comercial que indica la compraventa de un bien o servicio. Tiene validez legal y fiscal. También, es un documento de carácter mercantil que indica una compraventa de un bien o servicio y que, entre otras cosas, debe incluir toda la información de la operación.
 Cliente: Persona que utiliza los servicios de dicha empresa, lo cual para poder prestar los servicios necesitamos saber su nombre, apellido y mas que todo su cedula.
 Empleado: Persona que trabaja para dicha empresa, lo cual para poder asegurar necesitamos saber su nombre, apellido, cargo y su cedula.
@@ -20,17 +28,69 @@ Inventario: Es el conjunto de mercancías que se acumulan en el almacén pendien
 
 
 2. De los 10 objetos descritos en el paso 1, abstraer 5 de ellos en clases y diagramarlas con tres atributos y tres métodos mínimo para cada clase (los métodos getters y setter no cuentan).
+     Utensilio                          
+
+-Nombre:String
+-Uso:String
+-cantidad: Int
+
++comprar(Nombre:String):Boolean
++Lavar(Nombre:String):Boolean
++Desechar(Nombre:String):Boolean
+
+      Factura
  
+ -Ruc:Int 
+-Nombre: Sring
+-Direccion: String
+-FormaPago:String     
+
++crearFactura(Ruc:String):Boolean
++EditarFactura(Ruc:Srring,Nombre:String,Direccion:String,FormaPago:String):Boolean
++EliminarFctura(Ruc:Int):Boolean
+
+    Empleado
+    
+ -Cedula: Int
+-Nombre:String
+-Apellido:String
+-Cargo: String
+
++ingresarEmpleado(Cedula:Int, Nombre:String, Apellido:String, Cargo:String):Boolean
++modificar(Cedula: int , Nombre:String , Apellido:String , Cargo:String):Boolean
++eliminarEmpleado(Cedula:String):Boolean
+
+    Cliente
+
+-Cedula: Int
+-Nombre:String
+-Apellido:String
+
+
++ingresarCliente(Cedula:String , Nombre:String, Apellido:String):Boolean
++modificarCliente(Cedula:String , Nombre:String, Apellido:String):Boolean
++eliminarCliente(Cedula:Int):Boolean
+
+    TipoComida
+
+-Nombre:String
+-Precio:Int
+-Descripcion:String
+
++comprarComida(Nombre:String):Boolean
++cambiarComida(Nombre:String):Boolean
++desecharComida(Nombre:String):Boolean
 
 3. Crear un proyecto Java en NetBeans llamado Practica01-SuApellidoNombre y sobre el mismo codificar las 5 clases seleccionadas en java utilizando: atributos, métodos y encapsulamiento con los métodos getters and setters.  En relación a los métodos (comportamientos) estos solo deben ser declarados es decir no se requiere del procedimiento.
 Todas las clases y métodos deben contar con la documentación del código fuente. Además, se debe nombrar correctamente las clases, métodos, atributos y/o paquetes según las buenas prácticas de programación de las convenciones de los códigos de java.
  
  
- * @since 2019
+**CLASE FACTURA**
+
+* @since 2019
  * @version 2.0
  * @author Carmen Bravo
  */
-
 //Esta clase describe los atributos que tiene un bate
 public class Factura {
     /**
@@ -134,6 +194,11 @@ public class Factura {
 
     }
     
+   
+   
+   **CLASE CLIENTE**
+    
+    
     public class Cliente {
     /**
      * Atributos de la clase cliente
@@ -216,6 +281,10 @@ public class Factura {
     public boolean eliminarCliente(int cedula) {
         return true;
     }
+    
+    
+    **CLASE EMPLEADO**
+    
     
     //Esta clase describe los atributos que tiene un Empleado
 public class Empleado {
@@ -322,6 +391,9 @@ public class Empleado {
      public boolean ingresarCleinte(int cedula) {
          return true;
      }
+     
+     
+     ***CLASE UTENSILIO**
 /**
  * @since 2019
  * @version 2.0
@@ -416,6 +488,107 @@ public class Utensilio {
     public boolean desecharUtensilio(String nombre) {
         return true;
     }
+    
+    
+    *** CLASE TIPOCOMIDA***
+   
+   package ec.edu.ups;
+
+/**
+ * @since 2019
+ * @version 2.0
+ * @author Carmen Bravo
+ */
+//Esta clase describe los atributos que tiene un tipo de comida
+public class TipoComida {
+
+    /**
+     *atributos de la clase TipoComida
+     */
+    private String nombre;
+    private int precio;
+    private String descripcion;
+
+    /**
+     * Consige la informacion con respecto al nombre de la comida
+     * @return (String ) nombre de la comida
+     */
+    public String getNombre() {
+        return nombre;
+    }
+    /**
+     * Establece la informacion con respecto nombre de la comida
+     * @param nombre 
+     */
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    /**
+     * Consige la informacion con respecto el precio de la comida
+     * @return (int) precio de la comida
+     */
+    public int getPrecio() {
+        return precio;
+    }
+
+    /**
+     * EStablece la informacion con respecto el precio de la comida
+     * @param precio 
+     */
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
+
+    /**
+     * Consige la informacion con respecto a la descripcion de la comida
+     * @return (String) descripcion de la comida
+     */
+    public String getDescripcion() {
+        return descripcion;
+    }
+    /**
+     * Establece la informacion con respecto  a la descripcion de la comida
+     * @param descripcion 
+     */
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    /**
+     * 
+     * @param nombre
+     * @return true
+     */
+    public boolean comprarComida(String nombre) {
+
+        return true;
+    }
+
+    /**
+     * 
+     * @param nombre
+     * @return true
+     */
+    public boolean cambiarComida(String nombre) {
+        return false;
+
+    }
+    /**
+     * 
+     * @param nombre
+     * @return true
+     */
+
+    public boolean desecharComida(String nombre) {
+        return true;
+    }
+
+    
+}
+
  
  
  
@@ -440,6 +613,12 @@ public class Utensilio {
     public String toString() {
         return "Utensilio{" + "nombre=" + nombre + ", uso=" + uso + ", cantidad=" + cantidad + '}';
     } 
+    
+    @Override
+    public String toString() {
+        return "TipoComida{" + "nombre=" + nombre + ", precio=" + precio + ", descripcion=" + descripcion + '}';
+    }
+
  
 5. 5. Programar una clase principal (tipo main) que permita crear un objeto (instanciar) de cada clase referida en el punto anterior, estableciendo/seteando los datos/valores ingresados por el usuario (usando la clase Scanner) y posterior muestre dicha información del objeto en la consola de NetBeans.
 
@@ -616,7 +795,7 @@ public class Principal1 {
         if (z == true) {
             //Recuperación de los valores
             System.out.println("Clase: Utensilio");
-            System.out.println("Objeto:");
+         c   System.out.println("Objeto:");
             System.out.println("\tNombre: " + utensilio.getNombre());
             System.out.println("\tUso: " + utensilio.getUso());
             System.out.println("\tCantidad: " + utensilio.getCantidad());
@@ -624,20 +803,81 @@ public class Principal1 {
         }
     }
 }
+
+***Programa Ejecutado***
+
+
+***Bienvenido al menu de clases***
+Seleccione una de la opciones de clases para crear un objeto de tipo: 
+1: Cliente
+2: Empleado
+3: Factura
+4: Tipo de Comida
+5: Utensilios
+Digite el numero de la clase que desea crear
+1
+Cedula del Cliente:
+0107593873
+Nombre del Cliente:
+Carmen
+Apellido del Cliente:
+Bravo
+Para volver a usar ingrese  ( c )
+Digite la letra (p) para imprimir los objetos
+c
+***Bienvenido al menu de clases***
+Seleccione una de la opciones de clases para crear un objeto de tipo: 
+1: Cliente
+2: Empleado
+3: Factura
+4: Tipo de Comida
+5: Utensilios
+Digite el numero de la clase que desea crear
+2
+Cedula del Empleado:
+0107593873
+Nombre del Empleado:
+Carlos 
+Apellido del Empleado:
+Bravo
+Cargo:
+Chef
+Para volver a usar ingrese  ( c )
+Digite la letra (p) para imprimir los objetos
+p
+Clase: Cliente
+Objeto:
+	Cedula: 107593873
+	Nombre: Carmen
+	Apellido: Bravo
+
+toString():
+Cliente{cedula=107593873, nombre=Carmen, apellido=Bravo}
+Clase: Empleado
+Objeto:
+	Cedula: 107593873
+	Nombre: Carlos
+	Apellido: Bravo
+	Cargo:Chef
+
+toString():
+Empleado{cedula=107593873, nombre=Carlos, apellido=Bravo, cargo=Chef}
  
-6.
+6.Crear el reporsitorio
 Mi usuario:
 CarmenBravo20
 Nombre del trabajo:
-Abstracción de Objetos a Clases
+Abstracción de Objetos 
 
 
 RESULTADO(S) OBTENIDO(S):
 Abstraer de la vida real objetos, representarlos como clases y programar sobre ellos. 
 También A hacer el correcto uso de las convenciones del código JAVA, Comentar el código y organizar diagramas UML.
+
 CONCLUSIONES:
 Los estudiantes podrán introducirse en el modelamiento de aplicaciones de software. 
 Y saber respetar las convenciones del código JAVA.
+
 RECOMENDACIONES:
 Tener siempre en cuenta las convenciones del código JAVA.
 Acostumbrarse a buenas prácticas de programación.
@@ -646,4 +886,4 @@ Tener en cuenta la relación entre clases.
 Nombre de estudiante: Carmen Bravo
 
 
-Firma de estudiante:  
+Firma de estudiante:  Carmen Bravo
