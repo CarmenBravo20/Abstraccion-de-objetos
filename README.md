@@ -595,9 +595,10 @@ public class TipoComida {
 
 4. Implementar el método toString () en cada clase
  
-   @Override
+  
+  @Override
     public String toString() {
-        return "Factura{" + "ruc=" + getRuc() + ", nombre=" + getNombre() + ", direccion=" + getDireccion() + ", formaPago=" + getFormaPago() + '}';
+        return "Factura{" + "ruc=" + getRuc() + ", nombre=" + getNombre() + ", direccion=" + getDireccion() + ", formaPago=" +       getFormaPago() + '}';
     }
 
    @Override
@@ -608,7 +609,8 @@ public class TipoComida {
  @Override
     public String toString() {
         return "Empleado{" + "cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + ", cargo=" + cargo + '}';
-    }
+   
+   }
      @Override
     public String toString() {
         return "Utensilio{" + "nombre=" + nombre + ", uso=" + uso + ", cantidad=" + cantidad + '}';
